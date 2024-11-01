@@ -287,11 +287,11 @@ if __name__ == "__main__":
 
 
     """ Initialize the project runner"""
-    runner = ProjectRunner()
+    # runner = ProjectRunner()
 
     """ Index the documents from beforehand. When the API endpoint is hit, queries are run against 
         this pre-loaded in memory index. """
-    runner.run_indexer(corpus)
+    # runner.run_indexer(corpus)
 
     app.run()
 
@@ -300,7 +300,7 @@ output_location = "project2_output.json"
 username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
 runner = ProjectRunner()
 # corpus = "input_corpus.txt"
-# runner.run_indexer(corpus)
+runner.run_indexer(corpus)
 
 @app.route("/execute_query", methods=['POST'])
 def execute_query():
