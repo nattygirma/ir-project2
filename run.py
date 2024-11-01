@@ -271,8 +271,8 @@ def execute_query():
     output_dict = runner.run_queries(queries, random_command)
 
     """ Dumping the results to a JSON file. """
-    with open(output_location, 'w') as fp:
-        json.dump(output_dict, fp)
+    # with open(output_location, 'w') as fp:
+    #     json.dump(output_dict, fp)
 
     response = {
         "Response": output_dict,
