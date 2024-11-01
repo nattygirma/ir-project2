@@ -255,25 +255,11 @@ class ProjectRunner:
                 "command_result": eval(command) if "." in command else ""}
 
 
-# def index(corpus):
-#     projectRunner = ProjectRunner()
-#     projectRunner.run_indexer(corpus)
-
-#         #  user_input = input("Please enter your query: ")
-#     user_input = [
-#         "hello world",
-#         "hello swimming",
-#         "swimming going",
-#         "random swimming"
-#     ]
-#     output = projectRunner.run_queries(user_input)
-#     print("Output:",output)
-# index("check.txt")
-
 @app.route("/execute_query", methods=['POST'])
 def execute_query():
     """ This function handles the POST request to your endpoint.
         Do NOT change it."""
+    global runner
     start_time = time.time()
 
     queries = request.json["queries"]
@@ -310,9 +296,9 @@ if __name__ == "__main__":
     argv = parser.parse_args()
 
 
-    # corpus = argv.corpus
-    # output_location = argv.output_location
-    # username_hash = hashlib.md5(argv.username.encode()).hexdigest()
+    corpus = argv.corpus
+    output_location = argv.output_location
+    username_hash = hashlib.md5(argv.username.encode()).hexdigest()
 
     corpus = "input_corpus.txt"
     output_location = "output.json"
@@ -327,4 +313,4 @@ if __name__ == "__main__":
         this pre-loaded in memory index. """
     runner.run_indexer(corpus)
 
-    app.run()
+    app.run(port=9090)
