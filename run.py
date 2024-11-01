@@ -288,14 +288,14 @@ if __name__ == "__main__":
         Do NOT change it."""
 
     output_location = "project2_output.json"
-    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--corpus", type=str, help="Corpus File name, with path.")
-    parser.add_argument("--output_location", type=str, help="Output file name.", default=output_location)
-    parser.add_argument("--username", type=str,
-                        help="Your UB username. It's the part of your UB email id before the @buffalo.edu. "
-                             "DO NOT pass incorrect value here")
+    # parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    # parser.add_argument("--corpus", type=str, help="Corpus File name, with path.")
+    # parser.add_argument("--output_location", type=str, help="Output file name.", default=output_location)
+    # parser.add_argument("--username", type=str,
+    #                     help="Your UB username. It's the part of your UB email id before the @buffalo.edu. "
+    #                          "DO NOT pass incorrect value here")
 
-    argv = parser.parse_args()
+    # argv = parser.parse_args()
 
     corpus = "input_corpus.txt"
     output_location = "output.json"
