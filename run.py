@@ -295,9 +295,12 @@ if __name__ == "__main__":
 
     app.run()
 
-runner = ProjectRunner()
 corpus = "input_corpus.txt"
-runner.run_indexer(corpus)
+output_location = "project2_output.json"
+username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
+runner = ProjectRunner()
+# corpus = "input_corpus.txt"
+# runner.run_indexer(corpus)
 
 @app.route("/execute_query", methods=['POST'])
 def execute_query():
