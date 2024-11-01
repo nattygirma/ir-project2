@@ -260,8 +260,7 @@ runner = ProjectRunner()
 def execute_query():
     """ This function handles the POST request to your endpoint.
         Do NOT change it."""
-    
-    global runner
+
     start_time = time.time()
 
     queries = request.json["queries"]
