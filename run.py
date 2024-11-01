@@ -256,11 +256,11 @@ class ProjectRunner:
     #             "command_result": eval(command) if "." in command else ""}
 
 
-corpus = "input_corpus.txt"
-output_location = "output.json"
-username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
-runner = ProjectRunner()
-runner.run_indexer(corpus)
+# corpus = "input_corpus.txt"
+# output_location = "output.json"
+# username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
+# runner = ProjectRunner()
+# runner.run_indexer(corpus)
 
 
 @app.route("/execute_query", methods=['POST'])
@@ -293,7 +293,7 @@ if __name__ == "__main__":
     """ Driver code for the project, which defines the global variables.
         Do NOT change it."""
 
-    output_location = "project2_output.json"
+    # output_location = "project2_output.json"
     # parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     # parser.add_argument("--corpus", type=str, help="Corpus File name, with path.")
     # parser.add_argument("--output_location", type=str, help="Output file name.", default=output_location)
@@ -304,7 +304,7 @@ if __name__ == "__main__":
     # argv = parser.parse_args()
 
     corpus = "input_corpus.txt"
-    output_location = "output.json"
+    output_location = "project2_output.json"
     username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
 
 
