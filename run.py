@@ -255,11 +255,12 @@ class ProjectRunner:
     #             "node_value": str(index[kw].start_node.value),
     #             "command_result": eval(command) if "." in command else ""}
 
-runner = ProjectRunner()
-runner.run_indexer(corpus)
+
 corpus = "input_corpus.txt"
 output_location = "output.json"
 username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
+runner = ProjectRunner()
+runner.run_indexer(corpus)
 
 
 @app.route("/execute_query", methods=['POST'])
