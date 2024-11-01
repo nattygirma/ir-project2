@@ -256,6 +256,10 @@ class ProjectRunner:
     #             "command_result": eval(command) if "." in command else ""}
 
 runner = ProjectRunner()
+corpus = "input_corpus.txt"
+output_location = "output.json"
+username_hash = hashlib.md5("natnaelg".encode()).hexdigest()
+
 
 @app.route("/execute_query", methods=['POST'])
 def execute_query():
@@ -271,8 +275,8 @@ def execute_query():
     output_dict = runner.run_queries(queries, random_command)
 
     """ Dumping the results to a JSON file. """
-    # with open(output_location, 'w') as fp:
-    #     json.dump(output_dict, fp)
+    with open(output_location, 'w') as fp:
+        json.dump(output_dict, fp)
 
     response = {
         "Response": output_dict,
