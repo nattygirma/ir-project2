@@ -254,11 +254,13 @@ class ProjectRunner:
                 "node_value": str(index[kw].start_node.value),
                 "command_result": eval(command) if "." in command else ""}
 
+runner = ProjectRunner()
 
 @app.route("/execute_query", methods=['POST'])
 def execute_query():
     """ This function handles the POST request to your endpoint.
         Do NOT change it."""
+    
     global runner
     start_time = time.time()
 
@@ -294,11 +296,6 @@ if __name__ == "__main__":
                              "DO NOT pass incorrect value here")
 
     argv = parser.parse_args()
-
-
-    corpus = argv.corpus
-    output_location = argv.output_location
-    username_hash = hashlib.md5(argv.username.encode()).hexdigest()
 
     corpus = "input_corpus.txt"
     output_location = "output.json"
